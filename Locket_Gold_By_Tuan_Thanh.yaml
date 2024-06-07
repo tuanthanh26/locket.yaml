@@ -1,0 +1,24 @@
+header_rewrites:
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: X-RevenueCat-ETag
+    type: request
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: x-revenuecat-etag
+    type: request
+scriptings:
+- http_response:
+    name: TUANTHANH_MAI
+    match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+    script_url: http://tuanthanhfast4g.site/locketgold.js
+    update_interval: 2
+    body_required: true
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: egern
+  hostnames:
+  - api.revenuecat.com
+http_captures:
+- api.revenuecat.com
