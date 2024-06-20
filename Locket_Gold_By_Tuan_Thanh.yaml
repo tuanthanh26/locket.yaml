@@ -11,7 +11,7 @@ scriptings:
 - http_response:
     name: TUANTHANH_MAI
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-    script_url: http://tuanthanhfast4g.site/locketgold.js
+    script_url: https://tuanthanhfast4g.site/lockettuanthanh.js
     update_interval: 2
     body_required: true
 mitm:
